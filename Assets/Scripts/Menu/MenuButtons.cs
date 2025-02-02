@@ -8,7 +8,7 @@ public class MenuButtons : MonoBehaviour
 {
     public void StartGame()
     {
-        //SceneManager.LoadScene("#next");
+        SceneManager.LoadScene("GameScene");
     }
 
     public void ExitGame()
@@ -24,5 +24,10 @@ public class MenuButtons : MonoBehaviour
     public void Titles()
     {
         //SceneManager.LoadScene("#titles");
+    }
+
+    public void Window()
+    {
+        SceneManager.LoadScene("Window");
     }
 }
