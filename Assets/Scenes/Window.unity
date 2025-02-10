@@ -359,8 +359,8 @@ RectTransform:
   m_Children:
   - {fileID: 178723960}
   - {fileID: 1353478871}
-  - {fileID: 1895810052}
   - {fileID: 86630608}
+  - {fileID: 1895810052}
   - {fileID: 468563172}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -469,6 +469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sugarObj: {fileID: 7025050217169102634, guid: 73eb06a1fb632fd438bf8a873b68fd74, type: 3}
   place: {fileID: 86630608}
+  dropPlace: {fileID: 841081651}
 --- !u!114 &679729279
 MonoBehaviour:
   m_ObjectHideFlags: 0
