@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class AnimalMovement : MonoBehaviour
 {
-    [SerializeField] List<GameObject> animals = new List<GameObject>();
+    [SerializeField] private  List<GameObject> animals = new List<GameObject>();
+    [SerializeField] private float speed;
 
     private void Start()
     {
