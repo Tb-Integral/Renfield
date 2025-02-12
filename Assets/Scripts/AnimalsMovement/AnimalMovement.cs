@@ -7,10 +7,14 @@ public class AnimalMovement : MonoBehaviour
 {
     [SerializeField] private  List<GameObject> animals = new List<GameObject>();
     [SerializeField] private float speed;
+    [SerializeField] private GameObject sugarFolder;
 
-    private void Start()
+    private void Update()
     {
-        Transform place = GetComponent<Transform>();
-        Instantiate(animals[Random.Range(0, animals.Count)], Vector2.zero, Quaternion.identity).transform.SetParent(place, false); ;
+        if (sugarFolder.transform.childCount > 0)
+        {
+            Transform place = GetComponent<Transform>();
+            Instantiate(animals[Random.Range(0, animals.Count)], Vector2.zero, Quaternion.identity).transform.SetParent(place, false); ;
+        }
     }
 }

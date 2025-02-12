@@ -12,8 +12,17 @@ public class DragNDropable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     [SerializeField] private RectTransform dropPlace;
     [SerializeField] private TextMeshProUGUI quantityText;
     [SerializeField] private int quantity;
-    private Image obj;
 
+    [SerializeField] private List<GameObject> animals = new List<GameObject>();
+    [SerializeField] private Transform AnimalFolder;
+    [SerializeField] private float speed;
+    [SerializeField] private float time;
+    [SerializeField] private float xAnimal;
+    [SerializeField] private float yAnimal;
+
+    private Image obj;
+    private float xPoint;
+    private float yPoint;
     private void Awake()
     {
         quantityText.text = quantity.ToString();
@@ -56,9 +65,21 @@ public class DragNDropable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             }
             else
             {
+                AnimalMovement();
                 quantity--;
                 quantityText.text = quantity.ToString();
             }
         }
+    }
+
+    private void AnimalMovement()
+    {
+        xPoint = Random.Range(-xAnimal, xAnimal);
+        if (xPoint > 10f || xPoint < -10f)
+        {
+            yPoint = Random.Range(0, yAnimal);
+        }
+        else yPoint = yAnimal;
+        Instantiate(animals[Random.Range(0, animals.Count)], new Vector2 (xPoint, yPoint), Quaternion.identity).transform.SetParent(AnimalFolder, false); ;
     }
 }
