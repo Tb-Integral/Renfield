@@ -479,9 +479,11 @@ MonoBehaviour:
   - {fileID: 8825444962416685916, guid: 15b83d366a0ed534c8beeb2f0da50ab6, type: 3}
   - {fileID: 7505037467791245530, guid: 01db0922ab5cabf4dad44a2e44bc9db6, type: 3}
   AnimalFolder: {fileID: 468563172}
-  speed: 0
-  time: 0
-  xAnimal: 12
+  speedMax: 4
+  speedMin: 2
+  timeMax: 5
+  timeMin: 0
+  xAnimal: 13
   yAnimal: 6
 --- !u!114 &679729279
 MonoBehaviour:
