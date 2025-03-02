@@ -100,78 +100,119 @@ public class DragNDropable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     private IEnumerator animalToFood(float timeWait, float speed, float x, float y, GameObject animal, Image food)
     {
+        yield return new WaitForSeconds(timeWait);
+
+        if (animal == null)
+        {
+            SpawnNewAnimal(food);
+            yield break;
+        }
+
         float xFood = food.rectTransform.position.x;
         float yFood = food.rectTransform.position.y;
         float acceleration = 0.5f;
-        float currentSpeed = 0f;
-
-        float timer = 0f;
-        while (timer < timeWait)
-        {
-            timer += Time.deltaTime;
-            yield return null;
-        }
+        float currentSpeed = 1f;
 
         if (xFood < animal.transform.position.x)
         {
             animal.GetComponent<SpriteRenderer>().flipX = true;
         }
 
-        float step;
-        while (Mathf.Abs(xFood - animal.transform.position.x) > 0.5f ||
-           Mathf.Abs(yFood - animal.transform.position.y) > 0.5f)
+        while (animal != null && Vector2.Distance(animal.transform.position, new Vector2(xFood, yFood)) > 0.5f)
+        {
+            if (animal == null)
             {
-                currentSpeed = Mathf.Lerp(currentSpeed, speed, acceleration * Time.deltaTime);
-                animal.transform.position = Vector2.Lerp(
-                    animal.transform.position,
-                    new Vector2(xFood, yFood),
-                    currentSpeed * Time.deltaTime
+                SpawnNewAnimal(food);
+                yield break;
+            }
+
+            currentSpeed = Mathf.Lerp(currentSpeed, speed, acceleration * Time.deltaTime);
+            animal.transform.position = Vector2.MoveTowards(
+                animal.transform.position,
+                new Vector2(xFood, yFood),
+                currentSpeed * Time.deltaTime
             );
+
             yield return null;
         }
 
-        Debug.Log("X food: " + xFood);
-        Debug.Log("Y food: " + yFood);
-        Debug.Log("X : " + x);
-        Debug.Log("Y : " + y);
-
-        Debug.Log("end of while");
-
-        timeWait = Random.Range (timeMin, timeMax);
-        timer = 0f;
-        while (timer < timeWait)
+        if (animal == null)
         {
-            timer += Time.deltaTime;
-            yield return null;
+            SpawnNewAnimal(food);
+            yield break;
         }
 
-        Destroy(food.gameObject); // Удаляем объект
+        Debug.Log("Животное дошло до еды!");
 
+        yield return new WaitForSeconds(Random.Range(timeMin, timeMax));
 
-        speed = Random.Range(speedMin, speedMax);
-
-        xFood = Random.Range(-xAnimal, xAnimal);
-        if (xFood > 9f || xFood < -9f)
+        if (animal)
         {
-            yFood = Random.Range(0, yAnimal);
-        }
-        else yFood = yAnimal;
+            Destroy(food.gameObject);
 
 
-        animal.GetComponent<SpriteRenderer>().flipX = (xFood < animal.transform.position.x) ? true : false;
+            speed = Random.Range(speedMin, speedMax);
+
+            xFood = Random.Range(-xAnimal, xAnimal);
+            if (xFood > 9f || xFood < -9f)
+            {
+                yFood = Random.Range(0, yAnimal);
+            }
+            else yFood = yAnimal;
 
 
-        while (Mathf.Abs(xFood - animal.transform.position.x) > 0.5f ||
-           Mathf.Abs(yFood - animal.transform.position.y) > 0.5f)
-        {
+            animal.GetComponent<SpriteRenderer>().flipX = (xFood < animal.transform.position.x) ? true : false;
+
+
+            while (animal != null && Vector2.Distance(animal.transform.position, new Vector2(xFood, yFood)) > 0.5f)
+            {
+                if (animal == null)
+                {
+                    SpawnNewAnimal(food);
+                    yield break;
+                }
+
                 currentSpeed = Mathf.Lerp(currentSpeed, speed, acceleration * Time.deltaTime);
-
-                animal.transform.position = Vector2.Lerp(
+                animal.transform.position = Vector2.MoveTowards(
                     animal.transform.position,
                     new Vector2(xFood, yFood),
                     currentSpeed * Time.deltaTime
                 );
-            yield return null;
+
+                yield return null;
+            }
+            Destroy(animal.gameObject);
         }
+        else
+        {
+            xPoint = Random.Range(-xAnimal, xAnimal);
+            if (xPoint > 9f || xPoint < -9f)
+            {
+                yPoint = Random.Range(0, yAnimal);
+            }
+            else yPoint = yAnimal;
+            animal = Instantiate(animals[Random.Range(0, animals.Count)], new Vector2(xPoint, yPoint), Quaternion.identity);
+            animal.transform.SetParent(AnimalFolder, false);
+
+            time = Random.Range(timeMin, timeMax);
+            speed = Random.Range(speedMin, speedMax);
+
+            StartCoroutine(animalToFood(time, speed, xPoint, yPoint, animal, food));
+        }
+    }
+
+    // Функция для создания нового животного
+    private void SpawnNewAnimal(Image food)
+    {
+        float xPoint = Random.Range(-xAnimal, xAnimal);
+        float yPoint = (xPoint > 9f || xPoint < -9f) ? Random.Range(0, yAnimal) : yAnimal;
+
+        GameObject newAnimal = Instantiate(animals[Random.Range(0, animals.Count)], new Vector2(xPoint, yPoint), Quaternion.identity);
+        newAnimal.transform.SetParent(AnimalFolder, false);
+
+        float time = Random.Range(timeMin, timeMax);
+        float speed = Random.Range(speedMin, speedMax);
+
+        StartCoroutine(animalToFood(time, speed, xPoint, yPoint, newAnimal, food));
     }
 }
