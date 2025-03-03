@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{3103666F-4C02-DD5A-DE55-A4A75CEB1E21}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\resourses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3103666F-4C02-DD5A-DE55-A4A75CEB1E21}|Assembly-CSharp.csproj|E:\\Mareatan\\GitHub\\Renfield\\assets\\scripts\\animalsmovement\\animalclick.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3103666F-4C02-DD5A-DE55-A4A75CEB1E21}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\animalsmovement\\animalclick.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3103666F-4C02-DD5A-DE55-A4A75CEB1E21}|Assembly-CSharp.csproj|E:\\Mareatan\\GitHub\\Renfield\\assets\\scripts\\dragndropable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3103666F-4C02-DD5A-DE55-A4A75CEB1E21}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dragndropable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3103666F-4C02-DD5A-DE55-A4A75CEB1E21}|Assembly-CSharp.csproj|e:\\mareatan\\github\\renfield\\assets\\scripts\\dragndropable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3103666F-4C02-DD5A-DE55-A4A75CEB1E21}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dragndropable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3103666F-4C02-DD5A-DE55-A4A75CEB1E21}|Assembly-CSharp.csproj|E:\\Mareatan\\GitHub\\Renfield\\assets\\scripts\\animalsmovement\\animalclick.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3103666F-4C02-DD5A-DE55-A4A75CEB1E21}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\animalsmovement\\animalclick.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3103666F-4C02-DD5A-DE55-A4A75CEB1E21}|Assembly-CSharp.csproj|E:\\Mareatan\\GitHub\\Renfield\\assets\\scripts\\animalsmovement\\animalmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -44,33 +44,33 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Resourses.cs",
               "ToolTip": "E:\\Mareatan\\GitHub\\Renfield\\Assets\\Scripts\\Resourses.cs",
               "RelativeToolTip": "Assets\\Scripts\\Resourses.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwCkAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-02T14:51:14.764Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "DragNDropable.cs",
               "DocumentMoniker": "E:\\Mareatan\\GitHub\\Renfield\\Assets\\Scripts\\DragNDropable.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\DragNDropable.cs",
               "ToolTip": "E:\\Mareatan\\GitHub\\Renfield\\Assets\\Scripts\\DragNDropable.cs",
               "RelativeToolTip": "Assets\\Scripts\\DragNDropable.cs",
-              "ViewState": "AQIAAJgAAAAAAAAAAAAwwLYAAAANAAAA",
+              "ViewState": "AQIAAHgAAAAAAAAAAAAmwI4AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-10T18:53:02.557Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "AnimalClick.cs",
               "DocumentMoniker": "E:\\Mareatan\\GitHub\\Renfield\\Assets\\Scripts\\AnimalsMovement\\AnimalClick.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AnimalsMovement\\AnimalClick.cs",
               "ToolTip": "E:\\Mareatan\\GitHub\\Renfield\\Assets\\Scripts\\AnimalsMovement\\AnimalClick.cs",
               "RelativeToolTip": "Assets\\Scripts\\AnimalsMovement\\AnimalClick.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-07T19:44:21.563Z",
               "EditorCaption": ""
@@ -85,7 +85,8 @@
               "RelativeToolTip": "Assets\\Scripts\\AnimalsMovement\\AnimalMovement.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-07T19:28:01.083Z"
+              "WhenOpened": "2025-02-07T19:28:01.083Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

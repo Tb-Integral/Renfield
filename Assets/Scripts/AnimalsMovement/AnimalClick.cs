@@ -12,7 +12,10 @@ public class AnimalClick : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        _resourses.fliesCount++;
+        if (gameObject.name.Substring(0, 3) == "Fly"){
+            _resourses.fliesCount++;
+            _resourses.FlyText.text = _resourses.fliesCount.ToString();
+        }
         Destroy(gameObject);
     }
 }

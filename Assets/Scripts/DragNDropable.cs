@@ -142,8 +142,6 @@ public class DragNDropable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             yield break;
         }
 
-        Debug.Log("Животное дошло до еды!");
-
         yield return new WaitForSeconds(Random.Range(timeMin, timeMax));
 
         if (animal)
